@@ -1,0 +1,12 @@
+import java.util.*;
+import java.io.*;
+
+public class Transaksi {
+
+  private idTr;
+  private Date tglTr;
+  private String kasir;
+  
+
+
+}
