@@ -1,0 +1,72 @@
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ *
+ * Java program to show how to format date in Java using SimpleDateFormat
+ * Examples. Java allows to include date, time and timezone information
+ * while formatting dates in Java.
+ *
+ * @author http://java67.blogspot.com
+ */
+public class DateFormatExample {
+
+    public static void main(String args[]) {
+     
+        // This is how to get today's date in Java
+        Date today = new Date();
+     
+        //If you print Date, you will get un formatted output
+        System.out.println("Today is : " + today);
+     
+        //formatting date in Java using SimpleDateFormat
+        SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
+        String date = DATE_FORMAT.format(today);
+        System.out.println("Today in dd-MM-yyyy format : " + date);
+     
+        //Another Example of formatting Date in Java using SimpleDateFormat
+        DATE_FORMAT = new SimpleDateFormat("dd/MM/yy");
+        date = DATE_FORMAT.format(today);
+        System.out.println("Today in dd/MM/yy pattern : " + date);
+     
+        //formatting Date with time information
+        DATE_FORMAT = new SimpleDateFormat("dd-MM-yy:HH:mm:SS");
+        date = DATE_FORMAT.format(today);
+        System.out.println("Today in dd-MM-yy:HH:mm:SS : " + date);
+     
+        //SimpleDateFormat example - Date with timezone information
+        DATE_FORMAT = new SimpleDateFormat("dd-MM-yy:HH:mm:SS Z");
+        date = DATE_FORMAT.format(today);
+        System.out.println("Today in dd-MM-yy:HH:mm:SSZ : " + date);
+     
+    }
+ 
+}
+
+Output:
+Today is : Fri Nov 02 16:11:27 IST 2012
+Today in dd-MM-yyyy format : 02-11-2012
+Today in dd/MM/yy pattern : 02/11/12
+Today in dd-MM-yy:HH:mm:SS : 02-11-12:16:11:316
+Today in dd-MM-yy:HH:mm:SSZ : 02-11-12:16:11:316 +0530
+
+
+===============================================================================Catatan 2==============================================================================
+
+Convert Date String
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
+	String date = sdf.format(new Date()); 
+	System.out.println(date); //15/10/2013
+
+Convert String to Date
+	SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+	String dateInString = "31-08-1982 10:20:56";
+	Date date = sdf.parse(dateInString);
+	System.out.println(date); //Tue Aug 31 10:20:56 SGT 1982
+
+Get current date time
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	Date date = new Date();
+	System.out.println(dateFormat.format(date)); //2013/10/15 16:16:39
+
